@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+</head>
+<body>
+   
+    <div class="page">
+        <div class="page-card">
+             {% with messages = get_flashed_messages(with_categories=true)%}
+    {% if messages %}
+    {%for category ,message in messages %}
+    <div class="flash {{category}}"> 
+        {{message}} 
+    </div>
+    {%endfor%} 
+    {%endif%}
+    {%endwith%}
+            <h1>Sign Up</h1>
+            <p class="subtitle">Register to manage your appointments easily </p>
+            <form action="/Register" method="POST" class="form"> 
+                     <div class="form-grp">
+                     <label for="name"> Full Name</label> <input type="text"  id="name" name="name" placeholder="Enter your name" required > <br> </div>
+                     <div class="form-grp"><label for="email">Email</label> <input type="text"  id="email" name="email" placeholder="Enter your email" required> <br> </div>
+                     <div class="form-grp"><label for="password">Password</label> <input type="password" id="password" name="password"  placeholder="Enter your password" required> <br> </div>
+                     <button type="submit" class="btn"> Register </button>
+                     </form>
+                     <p class="text">Already have an account ? <a href="{{url_for('login')}}">Login</a>
+                     </p>
+
+
+
+        </div>
+    </div>
+   <script src="{{url_for('static',filename='script.js')}}"> </script>
+</body>
+</html>

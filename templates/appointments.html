@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my appointments</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body class="display"> 
+
+         <h1 class="head"> My Appointments </h1>
+         {% for a in appointments %}
+         <div class="appointments">
+            <p>Date:{{a[1]}}</p>
+            <p>Time:{{a[2]}}</p>
+            <p>Reason:{{a[3]}}</p>
+            <p>Status:{{a[4]}}</p> <br>
+         {% if a[4]=="booked" %}
+         <a href="{{url_for('update_appointment',appointment_id=a[0])}}">
+         <button type="submit" class="update-btn"> Update appointment</button>
+         </a>
+         <br> <br>
+         
+         <form action="{{url_for('cancel_appointment',appointment_id=a[0])}}" method="POST">
+        <button type="submit"  onclick="return confirmCancel()"  class="cancel-btn"> Cancel appointment</button> </form>
+        
+         {%endif%}
+         <hr>
+         </div>
+         {%endfor%}
+
+         <a href="{{url_for('dashboard')}}" class="dbtn"> &larr; Back to dashboard </a>
+         
+    <script src="{{url_for('static',filename='script.js')}}"> </script>
+    
+</body>
+</html>

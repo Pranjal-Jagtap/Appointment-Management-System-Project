@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+
+
+</head>
+<body class="dashboard-page">
+   
+        <div class="dashboard">
+            <h1> Welcome To Dashboard</h1>
+            <p> Manage your appointment easily</p>
+            <div class="cards">
+            <div class="card">
+                <h3>Total Appointments </h3>
+                <p >{{total}}</p>
+            </div>
+            <div class="card">
+                <h3>Upcoming  Appointments </h3>
+                <p>{{upcoming}}</p>
+            </div>
+            <div class="card">
+                <h3>Cancelled Appointments </h3>
+                <p>{{cancelled}}</p>
+            </div>
+        </div>
+    <div class="dashboard-buttons">
+    <a href="\book" ><button> Book Appointment </button>    </a> 
+    <a href="\appointments" >  <button>My  appointments</button>  </a>
+    <a href="\logout" >  <button> Logout </button></a>
+    </div>
+</div>
+    
+        
+
+    
+</body>
+</html>

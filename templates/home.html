@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Management System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h2> Appointment  Management  System</h2>
+        <div class="nav-links">
+            <a href="{{url_for('home')}}"> Home</a>
+            <a href="{{url_for('login')}}"> Login</a>
+            <a href="{{url_for('Register')}}"> Register</a>
+        </div>
+        </nav>
+        <section class="hero" >
+            <div class="hero-content">
+                <h1>Manage Your Appointments Easily</h1>
+                <p>Book,update and manage your appointments quickly and easily in one place</p>
+                 <a href="{{url_for('login')}}" class="start-btn"> Get Started</a> 
+            </div>
+            <div class="hero-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+        </section>
+        <section class="features">
+            <h2>What You Can Do</h2>
+            <div class="feature-container">
+                <div class="feature-card">
+                <div class="icon">
+                     <i class="fa-solid fa-calendar-days"></i>
+                </div>
+                <h3>Book Appointment</h3>
+                <p> Book your appointment by selecting your preferred date and time </p>
+                </div>
+                <br>
+                <div class="feature-card">
+                <div class="icon">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </div>
+                <h3>Update Appointment</h3>
+                <p>Easily change your appointment date,time,reason</p>
+                </div>
+                <br>
+                <div class="feature-card">
+                <div class="icon">
+                   <i class="fa-solid fa-x"></i>
+                </div>
+                <h3>Cancel Appointment</h3>
+               <p>Cancel an appointment whenever it is no longer required</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p><i class="fa-regular fa-copyright"></i> 2026 Appointment Management System </p>
+        <p>Book  &bull;  Manage  &bull;  Stay Organized </p>
+
+    </footer>
+
+
+
+
+    
+    
+</body>
+</html>

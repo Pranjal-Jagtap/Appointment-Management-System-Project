@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body class="page">
+    <div class="page-card">
+    <h1>Book Appointment</h1>
+    <p class="subtitle">Schedule your appointment</p>
+    {% with messages = get_flashed_messages(with_categories=true)%}
+    {% if messages %}
+    {%for category ,message in messages %}
+    <div class="flash {{category}}"> 
+        {{message}} 
+    </div>
+    {%endfor%} 
+    {%endif%}
+    {%endwith%}
+    
+
+    <form method="POST" action="{{url_for('book')}}" class="form" onsubmit="return validateForm()">
+        
+       <div class="form-grp"> <label for="appointment_date"> Date</label><input type="date" id="appointment_date" name="appointment_date" required min="{{today}}"> <br> <br> </div>
+        <div class="form-grp"><label for="appointment_time"> Time</label><input type="time" id="appointment_time"name="appointment_time" required> <br> <br> </div>
+        <div class="form-grp"><label for="reason" class="reason"> Reason:</label> <input type="text" id="reason"  name="reason"  >  <br> <br> </div>
+        <button type="submit" class="btn" >  Book Appointment </button> 
+    </form>
+    <p class="text"> <a href="{{url_for('dashboard')}}"> &larr;  Back to dashboard </a></p>
+    </div>
+    <script src="{{url_for('static',filename='script.js')}}"> </script>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Appointment</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    
+</head>
+<body>
+    <div class="page">
+        <div class="page-card">
+            <h1> Update Appointment</h1>
+            <p class="subtitle"> Edit your appointment details</p>
+            <form method="POST" class="form">
+                <div class="form-grp"><label for="appointment_date"> appointment date </label>
+                    <input type="date" id="appointment_date" name="appointment_date" value="{{appointment[1]}}" min="{{today}}" required>
+                    <br> <br> </div>
+                <div class="form-grp"> <label for="appointment_time"> appointment time</label>
+                     <input type="time" id="appointment_time" name="appointment_time" value="{{appointment[2]}}" required>
+                     <br> <br></div>
+                <div class="form-grp"><label for="reason"> reason</label>
+                    <input type="text" id="reason" name="reason" value="{{appointment[3]}}" required> 
+                    <br> <br> </div> 
+                    <button type="submit" class="btn" >Save Changes</button>
+                    </form>
+                    <br>
+                    <div class="text"><a href="{{url_for('appointments')}}"> &larr; Back To My Appointment </a>
+                    </div>
+                
+
+        </div>
+    </div>
+    <script src="{{url_for('static',filename='script.js')}}"> </script>    
+    
+        
+        
+        
+        
+
+</body>
+</html>
